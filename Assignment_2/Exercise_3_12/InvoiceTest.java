@@ -5,29 +5,27 @@ public class InvoiceTest {
         Invoice item3 = new Invoice("3", "Screwdriver", -20, 4.75);
         Invoice item4 = new Invoice("4", "Wrench", 6, -2.50);
 
-        System.out.println("Item 1: " + item1.getPartDescrip() + " - Total: $" + item1.getInvoiceAmount());
-        System.out.println("Item 2: " + item2.getPartDescrip() + " - Total: $" + item2.getInvoiceAmount());
+        System.out.printf("Item 1: %s - Total: $%.2f%n", item1.getPartDescrip(), item1.getInvoiceAmount());
+        System.out.printf("Item 2: %s - Total: $%.2f%n", item2.getPartDescrip(), item2.getInvoiceAmount());
 
-        System.out.println("\nThis item was given a quantity of -20, and it is corrected to 0: " + item3.getQuantity());
-        System.out.println("Item 3: " + item3.getPartDescrip() + " - Total: $" + item3.getInvoiceAmount());
+        System.out.printf("%nThis item was given a quantity of -20, and it is corrected to 0: %d%n", item3.getQuantity());
+        System.out.printf("Item 3: %s - Total: $%.2f%n", item3.getPartDescrip(), item3.getInvoiceAmount());
 
-        System.out.println("\nThis item was given a negative price, and it is corrected to 0.0: " + item4.getPrice());
-        System.out.println("Item 4: " + item4.getPartDescrip() + " - Total: $" + item4.getInvoiceAmount());
+        System.out.printf("%nThis item was given a negative price, and it is corrected to 0.0: $%.2f%n", item4.getPrice());
+        System.out.printf("Item 4: %s - Total: $%.2f%n", item4.getPartDescrip(), item4.getInvoiceAmount());
 
-        System.out.println("\nLet's try setting the price and quantity to different values.");
+        System.out.printf("%nLet's try setting the price and quantity to different values.%n");
         item1.setPrice(30);
-        System.out.println("Setting price to 30: $" + item1.getPrice());
+        System.out.printf("Setting price to 30: $%.2f%n", item1.getPrice());
         item1.setPrice(-30);
-        System.out.println("Setting price to -30: $" + item1.getPrice());
+        System.out.printf("Setting price to -30: $%.2f%n", item1.getPrice());
         item1.setQuantity(20);
-        System.out.println("Setting quantity to 20: " + item1.getQuantity());
+        System.out.printf("Setting quantity to 20: %d%n", item1.getQuantity());
         item1.setQuantity(-20);
-        System.out.println("Setting quantity to -20: " + item1.getQuantity());
+        System.out.printf("Setting quantity to -20: %d%n", item1.getQuantity());
 
-        System.out.println("\nPrinting out all of Item 3's information:");
-        System.out.println("Part number: " + item3.getPartNum() + 
-                           "\nPart description: " + item3.getPartDescrip() +
-                           "\nQuantity: " + item3.getQuantity() +
-                           "\nPrice: $" + item3.getPrice());
+        System.out.printf("%nPrinting out all of Item 3's information:%n");
+        System.out.printf("Part number: %s%nPart description: %s%nQuantity: %d%nPrice: $%.2f%n",
+                item3.getPartNum(), item3.getPartDescrip(), item3.getQuantity(), item3.getPrice());
     }
 }
